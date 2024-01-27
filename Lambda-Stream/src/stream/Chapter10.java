@@ -19,10 +19,10 @@ public class Chapter10 {
 		System.out.println("未完了のタスクの個数は" + c1);
 		System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
 
-		List<Task> list1 = list.stream().filter(f -> f.isDone() == false)
+		list = list.stream().filter(f -> f.isDone() == false)
 				.sorted((f1, f2) -> f1.getDate().compareTo(f2.getDate())).collect(Collectors.toList());
 
-		list1.stream().forEach(System.out::println);
+		list.stream().forEach(System.out::println);
 
 	}
 }
