@@ -3,7 +3,6 @@ package stream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Chapter10 {
 	public static void main(String[] args) throws Exception {
@@ -19,10 +18,8 @@ public class Chapter10 {
 		System.out.println("未完了のタスクの個数は" + c1);
 		System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
 
-		list = list.stream().filter(f -> f.isDone() == false)
-				.sorted((f1, f2) -> f1.getDate().compareTo(f2.getDate())).collect(Collectors.toList());
-
-		list.stream().forEach(System.out::println);
+		list.stream().filter(f -> f.isDone() == false).sorted((f1, f2) -> f1.getDate().compareTo(f2.getDate()))
+				.forEach(System.out::println);
 
 	}
 }
